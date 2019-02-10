@@ -9,8 +9,22 @@
 import Foundation
 
 class LogManager {
-    class func printCurrentState(text message: String, isLogged: Bool) {
+    
+    var isLoggedState: Bool
+    var previoslyState: String
+    
+    func printCurrentState(text message: String, isLogged: Bool) {
         guard isLogged else { return }
         print(message)
+    }
+    
+    init() {
+        isLoggedState = true
+        previoslyState = ""
+    }
+    
+    init(isLogged: Bool) {
+        self.isLoggedState = isLogged
+        previoslyState = ""
     }
 }

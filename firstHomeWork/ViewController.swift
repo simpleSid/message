@@ -10,39 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let isLoggedVCState = true
+    let logManager = LogManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        
+        logManager.isLoggedState = false
+        
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
 
     override func viewWillLayoutSubviews() {
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
     
     override func viewDidLayoutSubviews() {
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        LogManager.printCurrentState(text: "\(#function)", isLogged: isLoggedVCState)
+        logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
 }
 

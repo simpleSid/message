@@ -12,34 +12,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let isLoggedAppState = false
-    private var previoslyState = ""
+    let logManager = LogManager()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LogManager.printCurrentState(text: "Application moved from not running state to inactive state, method:\(#function)", isLogged: isLoggedAppState)
+        logManager.printCurrentState(text: "Application moved from not running state to inactive state, method:\(#function)", isLogged: logManager.isLoggedState)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        LogManager.printCurrentState(text: "Application moved from \(previoslyState) state to inactive state, method:\(#function)", isLogged: isLoggedAppState)
+        logManager.printCurrentState(text: "Application moved from \(logManager.previoslyState) state to inactive state, method:\(#function)", isLogged: logManager.isLoggedState)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        LogManager.printCurrentState(text: "Application moved from inactive state to background, method:\(#function)", isLogged: isLoggedAppState)
-        self.previoslyState = "background"
+        logManager.printCurrentState(text: "Application moved from inactive state to background, method:\(#function)", isLogged: logManager.isLoggedState)
+        logManager.previoslyState = "background"
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        LogManager.printCurrentState(text: "Application moved from background to inactive, method:\(#function)", isLogged: isLoggedAppState)
+        logManager.printCurrentState(text: "Application moved from background to inactive, method:\(#function)", isLogged: logManager.isLoggedState)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        LogManager.printCurrentState(text: "Application moved from inactive state to active state, method:\(#function)", isLogged: isLoggedAppState)
-        self.previoslyState = "active"
+        logManager.printCurrentState(text: "Application moved from inactive state to active state, method:\(#function)", isLogged: logManager.isLoggedState)
+        logManager.previoslyState = "active"
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        LogManager.printCurrentState(text: "Application moved from background to not running state, method:\(#function)", isLogged: isLoggedAppState)
+        logManager.printCurrentState(text: "Application moved from background to not running state, method:\(#function)", isLogged: logManager.isLoggedState)
     }
 }
 
