@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //asldfjalsdjfk123123dsdfsafasfdasfaewf
         logManager.isLoggedState = false
         
         logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
