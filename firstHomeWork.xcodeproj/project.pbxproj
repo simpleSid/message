@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA1DFAAD2210212900FE8C77 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA1DFAAC2210212900FE8C77 /* .gitignore */; };
 		AA23FFA722108956007007FF /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA23FFA622108956007007FF /* LogManager.swift */; };
 		AA89DD01220CB201009DBFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89DD00220CB201009DBFED /* AppDelegate.swift */; };
 		AA89DD03220CB201009DBFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89DD02220CB201009DBFED /* ViewController.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA1DFAAC2210212900FE8C77 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AA23FFA622108956007007FF /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		AA89DCFD220CB201009DBFED /* firstHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA89DD00220CB201009DBFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +42,6 @@
 		AA89DCF4220CB201009DBFED = {
 			isa = PBXGroup;
 			children = (
-				AA1DFAAC2210212900FE8C77 /* .gitignore */,
 				AA89DCFF220CB201009DBFED /* firstHomeWork */,
 				AA89DCFE220CB201009DBFED /* Products */,
 			);
@@ -131,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1DFAAD2210212900FE8C77 /* .gitignore in Resources */,
 				AA89DD0B220CB202009DBFED /* LaunchScreen.storyboard in Resources */,
 				AA89DD08220CB202009DBFED /* Assets.xcassets in Resources */,
 				AA89DD06220CB201009DBFED /* Main.storyboard in Resources */,

@@ -13,9 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let logManager = LogManager()
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        logManager.isLoggedState = false
         logManager.printCurrentState(text: "Application moved from not running state to inactive state, method:\(#function)", isLogged: logManager.isLoggedState)
         return true
     }

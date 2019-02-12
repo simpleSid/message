@@ -16,9 +16,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logManager.isLoggedState = false
+        var a = UILabel()
+        
+        logManager.isLoggedState = true
         
         logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
+        
+        a = UILabel(frame: CGRect(x: view.bounds.width / 2 - 50, y: 200, width: 100 , height: 20))
+        a.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        view.addSubview(a)
+//        a.translatesAutoresizingMaskIntoConstraints = false
+//        a.leftAnchor.constraint(equalTo: view.bounds.width / 2, constant: <#T##CGFloat#>)
+        
+        let f = view.bounds.width
+        print(f ?? "nil")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +47,8 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let ff = view.bounds.width
+        print(ff ?? "nil")
         logManager.printCurrentState(text: "\(#function)", isLogged: logManager.isLoggedState)
     }
     
