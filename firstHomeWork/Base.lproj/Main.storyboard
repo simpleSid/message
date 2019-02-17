@@ -27,9 +27,6 @@
                                 <state key="normal" title="Редактировать">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="showActionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WoT-KS-hTb"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="393-vU-uuX">
                                 <rect key="frame" x="16" y="36" width="288" height="288"/>
@@ -56,6 +53,9 @@
                                     <constraint firstAttribute="width" secondItem="cYk-us-xow" secondAttribute="height" multiplier="1:1" id="pWf-ff-vOE"/>
                                 </constraints>
                                 <state key="normal" image="slr-camera-2-xxl"/>
+                                <connections>
+                                    <action selector="showActionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Hu-KL-psk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21175080537796021" green="0.21888184547424316" blue="0.27448827028274536" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

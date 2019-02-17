@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
         self.editButton.layer.borderWidth = 1
         self.editButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        self.setNeedsStatusBarAppearanceUpdate()
 //        print("frame is \(self.editButton.frame)")
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -73,9 +74,43 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showActionPressed(_ sender: UIButton) {
-        print("choose foto")
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let addFotoFromGallery = UIAlertAction(title: "выбрать фото", style: .default, handler: { (action) in
+            self.chooseImagePickerAction(source: .photoLibrary)
+        })
+        let addFotoFromCamera = UIAlertAction(title: "сделать фото", style: .default, handler: { (action) in
+            self.chooseImagePickerAction(source: .camera)
+        })
+        let cancel = UIAlertAction(title: "отмена", style: .cancel, handler: nil)
+        alertController.addAction(addFotoFromCamera)
+        alertController.addAction(addFotoFromGallery)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
     
+
 }
 
+extension ProfileViewController {
+    // MARK: Change status bar color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+}
 
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.profileImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+}
