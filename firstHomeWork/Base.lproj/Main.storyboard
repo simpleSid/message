@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,60 +10,90 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="firstHomeWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="firstHomeWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egh-3A-VbQ">
-                                <rect key="frame" x="123.5" y="328.5" width="128" height="30"/>
-                                <state key="normal" title="show second View"/>
+                                <rect key="frame" x="16" y="508" width="288" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1xs-gx-Ym6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Редактировать">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="lDw-Zy-Fq4" kind="show" identifier="showTestVC" id="PoU-dh-edd"/>
+                                    <action selector="showActionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WoT-KS-hTb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="393-vU-uuX">
+                                <rect key="frame" x="16" y="36" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="393-vU-uuX" secondAttribute="height" multiplier="1:1" id="Tw4-s1-vH3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Тони Старк" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-UU-X5d">
+                                <rect key="frame" x="16" y="332" width="288" height="26.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Гений, миллиардер, плей бой, филантроп и просто хороший парень" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-BT-70Z">
+                                <rect key="frame" x="16" y="366.5" width="288" height="65"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYk-us-xow">
+                                <rect key="frame" x="244" y="264" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.21175080537796021" green="0.21888184547424316" blue="0.27448827028274536" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cYk-us-xow" secondAttribute="height" multiplier="1:1" id="pWf-ff-vOE"/>
+                                </constraints>
+                                <state key="normal" image="slr-camera-2-xxl"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.21175080537796021" green="0.21888184547424316" blue="0.27448827028274536" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="egh-3A-VbQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Goz-6d-vDq"/>
-                            <constraint firstItem="egh-3A-VbQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fKT-mw-Usz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ItJ-BT-70Z" secondAttribute="trailing" constant="16" id="1KG-Hm-Ch2"/>
+                            <constraint firstItem="ItJ-BT-70Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2bO-cU-ej9"/>
+                            <constraint firstItem="egh-3A-VbQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6nk-PG-tYS"/>
+                            <constraint firstItem="cYk-us-xow" firstAttribute="bottom" secondItem="393-vU-uuX" secondAttribute="bottom" id="BFp-mD-Iyn"/>
+                            <constraint firstItem="393-vU-uuX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BLW-Kc-ehu"/>
+                            <constraint firstItem="MH0-UU-X5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nki-Yj-VR9"/>
+                            <constraint firstItem="ItJ-BT-70Z" firstAttribute="top" secondItem="MH0-UU-X5d" secondAttribute="bottom" constant="8" id="OSd-wb-71S"/>
+                            <constraint firstItem="cYk-us-xow" firstAttribute="width" secondItem="393-vU-uuX" secondAttribute="height" multiplier="5:24" id="PeM-IP-OFP"/>
+                            <constraint firstItem="cYk-us-xow" firstAttribute="trailing" secondItem="393-vU-uuX" secondAttribute="trailing" id="UBA-Et-Ske"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egh-3A-VbQ" secondAttribute="trailing" constant="16" id="YQi-Y9-KHX"/>
+                            <constraint firstItem="egh-3A-VbQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ItJ-BT-70Z" secondAttribute="bottom" constant="8" id="aK4-DG-VbX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MH0-UU-X5d" secondAttribute="trailing" constant="16" id="b37-5d-gFU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="egh-3A-VbQ" secondAttribute="bottom" constant="16" id="eRY-xE-jna"/>
+                            <constraint firstItem="393-vU-uuX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="hMQ-4u-dQ8"/>
+                            <constraint firstItem="MH0-UU-X5d" firstAttribute="top" secondItem="393-vU-uuX" secondAttribute="bottom" constant="8" id="pbC-ML-Nm2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="393-vU-uuX" secondAttribute="trailing" constant="16" id="zsB-oI-AII"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ItJ-BT-70Z" id="jaw-Jk-h1b"/>
+                        <outlet property="editButton" destination="egh-3A-VbQ" id="o2J-T0-FCd"/>
+                        <outlet property="nameLabel" destination="MH0-UU-X5d" id="GBz-3W-lTJ"/>
+                        <outlet property="profileImageView" destination="393-vU-uuX" id="FkR-O0-IMV"/>
+                        <outlet property="setFotoButton" destination="cYk-us-xow" id="aLd-A2-Jrq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="zdS-yr-Vi9">
-            <objects>
-                <viewController id="lDw-Zy-Fq4" customClass="SecondViewController" customModule="firstHomeWork" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vJn-4S-Qqx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uml-7f-Kqy">
-                                <rect key="frame" x="159" y="328.5" width="57" height="30"/>
-                                <state key="normal" title="Go back"/>
-                                <connections>
-                                    <action selector="goBack:" destination="lDw-Zy-Fq4" eventType="touchUpInside" id="57x-h7-0b6"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="uml-7f-Kqy" firstAttribute="centerX" secondItem="6oO-Du-6ow" secondAttribute="centerX" id="Q54-hA-H2O"/>
-                            <constraint firstItem="uml-7f-Kqy" firstAttribute="centerY" secondItem="6oO-Du-6ow" secondAttribute="centerY" id="gU1-UN-2Rx"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6oO-Du-6ow"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pde-ce-Ufb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="956" y="134"/>
+            <point key="canvasLocation" x="-3.75" y="115.14084507042254"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder-user" width="600" height="600"/>
+        <image name="slr-camera-2-xxl" width="256" height="256"/>
+    </resources>
 </document>
