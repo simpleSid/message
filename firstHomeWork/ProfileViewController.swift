@@ -25,42 +25,18 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.profileImageView.clipsToBounds = true
-        self.setFotoButton.clipsToBounds = true
-        self.setFotoButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        
-        self.editButton.layer.cornerRadius = 15
-        self.editButton.layer.borderWidth = 1
-        self.editButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        self.setNeedsStatusBarAppearanceUpdate()
+        self.initSubViews()
 //        print("frame is \(self.editButton.frame)")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
     }
-
-    override func viewWillLayoutSubviews() {
-//        print("frame is 1\(self.editButton.frame)")
-    }
-    
-    override func viewDidLayoutSubviews() {
-//        print("frame is 2\(self.editButton.frame)")
-
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.profileImageView.layer.cornerRadius = self.setFotoButton.frame.width / 2
-        self.setFotoButton.layer.cornerRadius = self.setFotoButton.frame.width / 2
-        self.setFotoButton.imageEdgeInsets = UIEdgeInsets(
-            top: self.setFotoButton.frame.width / 6,
-            left: self.setFotoButton.frame.width / 6,
-            bottom: self.setFotoButton.frame.width / 6,
-            right: self.setFotoButton.frame.width / 6)
-        
+
+        self.changeFramesForImage()
 //        print("frame is 44\(self.editButton.frame)")
         // отличие связано с тем, что на в методе viewDidLoad размеры только устаналвиваются и еще не доступны для изменения, а установка их происходит в методе viewWillLayoutSubviews, что в свою очередь проверяется в методе viewDidLayoutSubviews. После установки свех границ, вью появляется на экране и мы получаем уведомление об этом от метода viewDidApear.
     }
@@ -74,21 +50,53 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showActionPressed(_ sender: UIButton) {
+        self.displayFotoMenu()
+    }
+}
+
+
+
+extension ProfileViewController {
+    func initSubViews() {
+        self.profileImageView.clipsToBounds = true
+        self.setFotoButton.clipsToBounds = true
+        self.setFotoButton.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        
+        self.editButton.layer.cornerRadius = 15
+        self.editButton.layer.borderWidth = 1
+        self.editButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    func changeFramesForImage() {
+        self.profileImageView.layer.cornerRadius = self.setFotoButton.frame.width / 2
+        self.setFotoButton.layer.cornerRadius = self.setFotoButton.frame.width / 2
+        self.setFotoButton.imageEdgeInsets = UIEdgeInsets(
+            top: self.setFotoButton.frame.width / 6,
+            left: self.setFotoButton.frame.width / 6,
+            bottom: self.setFotoButton.frame.width / 6,
+            right: self.setFotoButton.frame.width / 6)
+    }
+    
+    func displayFotoMenu() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let addFotoFromGallery = UIAlertAction(title: "выбрать фото", style: .default, handler: { (action) in
+        let addFotoFromGallery = UIAlertAction(title: "выбрать фото", style: .default, handler: { (_) in
             self.chooseImagePickerAction(source: .photoLibrary)
         })
-        let addFotoFromCamera = UIAlertAction(title: "сделать фото", style: .default, handler: { (action) in
+        let addFotoFromCamera = UIAlertAction(title: "сделать фото", style: .default, handler: { (_) in
             self.chooseImagePickerAction(source: .camera)
         })
+        let deleteFoto = UIAlertAction(title: "удалить фото", style: .destructive) { (_) in
+            self.profileImageView.image = UIImage(named: "placeholder-user")
+        }
         let cancel = UIAlertAction(title: "отмена", style: .cancel, handler: nil)
         alertController.addAction(addFotoFromCamera)
         alertController.addAction(addFotoFromGallery)
+        alertController.addAction(deleteFoto)
         alertController.addAction(cancel)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-
 }
 
 extension ProfileViewController {
@@ -96,6 +104,9 @@ extension ProfileViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
@@ -106,9 +117,7 @@ extension ProfileViewController {
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-}
-
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.profileImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         dismiss(animated: true, completion: nil)
