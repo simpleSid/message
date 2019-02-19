@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA23FFA722108956007007FF /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA23FFA622108956007007FF /* LogManager.swift */; };
+		AA3BB8C7221C848800F27C80 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BB8C6221C848800F27C80 /* ViewControllerExtension.swift */; };
+		AA3BB8CC221C87AF00F27C80 /* UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BB8CB221C87AF00F27C80 /* UIcolor.swift */; };
 		AA89DD01220CB201009DBFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89DD00220CB201009DBFED /* AppDelegate.swift */; };
 		AA89DD03220CB201009DBFED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89DD02220CB201009DBFED /* ProfileViewController.swift */; };
 		AA89DD06220CB201009DBFED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA89DD04220CB201009DBFED /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		AA23FFA622108956007007FF /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		AA3BB8C6221C848800F27C80 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		AA3BB8CB221C87AF00F27C80 /* UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolor.swift; sourceTree = "<group>"; };
 		AA89DCFD220CB201009DBFED /* firstHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA89DD00220CB201009DBFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA89DD02220CB201009DBFED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA3BB8C8221C84E700F27C80 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA3BB8C6221C848800F27C80 /* ViewControllerExtension.swift */,
+				AA3BB8CB221C87AF00F27C80 /* UIcolor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA3BB8CA221C857800F27C80 /* Local Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AA23FFA622108956007007FF /* LogManager.swift */,
+			);
+			path = "Local Classes";
+			sourceTree = "<group>";
+		};
+		AA3BB8CD221C997100F27C80 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA89DD02220CB201009DBFED /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		AA89DCF4220CB201009DBFED = {
 			isa = PBXGroup;
 			children = (
@@ -57,10 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				AA89DD00220CB201009DBFED /* AppDelegate.swift */,
-				AA89DD02220CB201009DBFED /* ProfileViewController.swift */,
+				AA3BB8CD221C997100F27C80 /* Controllers */,
+				AA3BB8CA221C857800F27C80 /* Local Classes */,
+				AA3BB8C8221C84E700F27C80 /* Extensions */,
 				AA89DD04220CB201009DBFED /* Main.storyboard */,
 				AA89DD07220CB202009DBFED /* Assets.xcassets */,
-				AA23FFA622108956007007FF /* LogManager.swift */,
 				AA89DD09220CB202009DBFED /* LaunchScreen.storyboard */,
 				AA89DD0C220CB202009DBFED /* Info.plist */,
 			);
@@ -138,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3BB8C7221C848800F27C80 /* ViewControllerExtension.swift in Sources */,
 				AA23FFA722108956007007FF /* LogManager.swift in Sources */,
 				AA89DD03220CB201009DBFED /* ProfileViewController.swift in Sources */,
 				AA89DD01220CB201009DBFED /* AppDelegate.swift in Sources */,
+				AA3BB8CC221C87AF00F27C80 /* UIcolor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
